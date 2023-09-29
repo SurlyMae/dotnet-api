@@ -22,4 +22,11 @@ public class UserController : ControllerBase
             return NotFound();
         return user;
     }
+
+    [HttpPost]
+    public IActionResult Create(User user)
+    {
+        UserService.Add(user);
+        return CreatedAtAction(nameof(Get), new { id = user.Id }, user);
+    }
 }
