@@ -1,0 +1,6 @@
+{
+  "dotnet.symbolSearch.searchReferenceAssemblies": false,
+  "dotnet.defaultSolution": "dotnet-api.sln",
+  "csharp.inlayHints.enableInlayHintsForImplicitObjectCreation": false,
+  "csharp.format.enable": false
+}
