@@ -29,4 +29,16 @@ public class UserController : ControllerBase
         UserService.Add(user);
         return CreatedAtAction(nameof(Get), new { id = user.Id }, user);
     }
+
+    [HttpPut("{id}")]
+    public IActionResult Update(int id, User user) {
+      if(id != user.Id) return BadRequest();
+
+      var existingUser = UserService.Get(id);
+      if(existingUser is null) return NotFound();
+
+      UserService.Update(user);
+
+      return NoContent();
+    }
 }
