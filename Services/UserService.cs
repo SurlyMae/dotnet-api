@@ -36,17 +36,21 @@ public static class UserService
         Users.Add(user);
     }
 
-    public static void Delete(int id) {
-      var user = Get(id);
-      if(user is null)return;
+    public static void Delete(int id)
+    {
+        var user = Get(id);
+        if (user is null)
+            return;
 
-      Users.Remove(user);
+        Users.Remove(user);
     }
 
-    public static void Update(User user) {
-      var index = Users.FindIndex(u => u.Id == user.Id);
-      if(index == -1) return;
+    public static void Update(User user)
+    {
+        var index = Users.FindIndex(u => u.Id == user.Id);
+        if (index == -1)
+            return;
 
-      Users[index] = user;
+        Users[index] = user;
     }
 }
